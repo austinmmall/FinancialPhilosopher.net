@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="FinancialPhilosopher.net by Austin Mall, CFP®: Wise Decisions. Enduring Values. Reflections on money, family, faith, and the decisions that shape a life well-lived.">
+<link rel="icon" type="image/png" href="images/logo-mark.png">
+<title>FinancialPhilosopher.net</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Figtree:wght@500;600;700&family=Pinyon+Script&display=swap">
+<style>
+/* Layout: a private library — parchment ground, pine and antique gold from the brand; letter-like reading columns, one dark pine band for The Forum */
+:root{
+  --paper:#FAF6EC; --paper-2:#F2EBDA; --ink:#1F2A24; --ink-soft:#4C574F;
+  --gold:#A88030; --gold-text:#85631F; --pine:#1E4A3B; --on-pine:#F5EFDF; --on-pine-soft:#C9D6CC;
+  --rule:rgba(168,128,48,.32); --field:#FFFDF7; --shadow:0 18px 40px -24px rgba(31,42,36,.45);
+  --display:"Cormorant Garamond","Cormorant",Garamond,"Times New Roman",serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --ui:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --script:"Pinyon Script","Snell Roundhand",cursive;
+  --wrap:1160px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#111915; --paper-2:#18221D; --ink:#ECE5D2; --ink-soft:#B4B9AE;
+  --gold:#C9A257; --gold-text:#D6B36C; --pine:#183A2E; --on-pine:#F1EADA; --on-pine-soft:#B9C9BE;
+  --rule:rgba(201,162,87,.28); --field:#0D1411; --shadow:0 18px 40px -24px rgba(0,0,0,.8); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#111915; --paper-2:#18221D; --ink:#ECE5D2; --ink-soft:#B4B9AE;
+  --gold:#C9A257; --gold-text:#D6B36C; --pine:#183A2E; --on-pine:#F1EADA; --on-pine-soft:#B9C9BE;
+  --rule:rgba(201,162,87,.28); --field:#0D1411; --shadow:0 18px 40px -24px rgba(0,0,0,.8); color-scheme:dark}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.7}
+a{color:var(--gold-text)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:clamp(16px,4vw,40px)}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.08;text-wrap:balance;margin:0;letter-spacing:-.005em}
+p{margin:0}
+.eyebrow{font-family:var(--ui);font-size:.75rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-text)}
+.btn{display:inline-flex;align-items:center;gap:.5em;font-family:var(--ui);font-weight:600;font-size:.95rem;text-decoration:none;
+  padding:.8em 1.35em;border-radius:999px;border:1.5px solid var(--gold);background:var(--gold);color:#FFFCF4;cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--gold-text)}
+.textlink{font-family:var(--ui);font-weight:600;font-size:.95rem;text-decoration:none;border-bottom:1.5px solid var(--rule);padding-bottom:2px}
+.textlink:hover{border-color:var(--gold)}
+section{padding-block:clamp(64px,9vw,112px)}
+.sec-head{display:grid;gap:14px;max-width:46rem;margin-bottom:clamp(32px,5vw,52px)}
+.sec-head h2{font-size:clamp(2.2rem,4.6vw,3.4rem)}
+.sec-head .lede{color:var(--ink-soft);font-size:1.1rem}
+.sub{font-family:var(--display);font-style:italic;font-size:clamp(1.3rem,2.4vw,1.6rem);color:var(--gold-text);line-height:1.3}
+
+/* Header */
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.hbar{display:flex;align-items:center;justify-content:space-between;gap:16px 28px;flex-wrap:wrap;padding-block:12px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--gold-text)}
+.brand img{width:58px;height:auto;display:block}
+.brand span{font-family:var(--display);font-size:1.55rem;font-weight:600;line-height:1;color:var(--gold-text)}
+.brand small{font-size:.62em;opacity:.85}
+nav.main{display:flex;gap:6px 26px;flex-wrap:wrap;align-items:center}
+nav.main a{font-family:var(--ui);font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;padding:6px 0;border-bottom:1.5px solid transparent}
+nav.main a:hover{border-color:var(--gold)}
+@media (max-width:820px){.hbar{justify-content:center}nav.main{justify-content:center;gap:4px 18px}nav.main a{font-size:.82rem}.brand span{font-size:1.35rem}.brand img{width:46px}}
+
+/* Quote wheel */
+.quotes{border-bottom:1px solid var(--rule);background:var(--paper-2)}
+.qwrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:20px;padding-block:22px}
+.qlabel{font-family:var(--ui);font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-text);writing-mode:vertical-rl;transform:rotate(180deg);border-left:1px solid var(--rule);padding-left:12px}
+.qstage{display:grid;min-height:6.4em;align-items:center}
+.qstage figure{grid-area:1/1;margin:0;opacity:0;transform:translateY(8px);transition:opacity .7s ease,transform .7s ease;pointer-events:none;text-align:center}
+.qstage figure.on{opacity:1;transform:none;pointer-events:auto}
+.qstage blockquote{margin:0 auto;max-width:52rem;font-family:var(--display);font-style:italic;font-weight:500;font-size:clamp(1.2rem,2.3vw,1.6rem);line-height:1.35;text-wrap:balance}
+.qstage figcaption{margin-top:8px;font-family:var(--ui);font-size:.82rem;font-weight:600;letter-spacing:.06em;color:var(--gold-text)}
+.qnav{display:flex;flex-direction:column;align-items:center;gap:8px}
+.qnav button{background:none;border:0;padding:6px;cursor:pointer;color:var(--gold-text)}
+.dots{display:flex;flex-direction:column;gap:7px}
+.dots button{width:8px;height:8px;border-radius:50%;padding:0;border:1.5px solid var(--gold);background:transparent}
+.dots button[aria-current="true"]{background:var(--gold)}
+@media (max-width:640px){.qwrap{grid-template-columns:1fr}.qlabel{writing-mode:horizontal-tb;transform:none;border:0;padding:0;text-align:center}.qnav{flex-direction:row;justify-content:center}.dots{flex-direction:row}.qstage{min-height:9em}}
+
+/* Hero */
+.hero{padding-block:clamp(28px,3.5vw,44px) clamp(48px,6vw,80px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) clamp(240px,26vw,320px);grid-template-areas:"top top" "mission photo";gap:clamp(24px,3vw,36px) clamp(32px,5vw,64px);align-items:center}
+.hero-grid>*{min-width:0}
+.hero-top{grid-area:top}
+.hero-mission{grid-area:mission;max-width:44rem}
+.hero .arch{grid-area:photo}
+.hero h1{font-size:clamp(3rem,6.6vw,5.2rem);font-weight:600;line-height:.98;margin-block:12px 22px}
+.hero h1 em{font-style:italic;color:var(--gold-text);font-weight:500}
+.hero .intro{display:grid;gap:14px;max-width:46rem;font-size:1.12rem}
+.hero .mission{font-family:var(--display);font-size:clamp(1.6rem,2.8vw,2.2rem);line-height:1.3;font-style:italic;border-left:2px solid var(--gold);padding-left:22px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.arch{position:relative;max-width:320px;justify-self:end;width:100%;margin:12px 0 0;display:flex;flex-direction:column;align-items:center}
+.arch img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;border-radius:999px 999px 6px 6px;box-shadow:var(--shadow)}
+.arch::before{content:"";position:absolute;inset:-12px -12px auto -12px;aspect-ratio:auto;height:calc(100% - 2.6em);border:1.5px solid var(--gold);border-radius:999px 999px 6px 6px;z-index:-1}
+.arch figcaption{margin-top:20px;font-family:var(--display);font-size:1.35rem;font-weight:600;color:var(--gold-text);text-align:center;line-height:1.2}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr;grid-template-areas:"top" "photo" "mission"}.hero .arch{justify-self:center;max-width:280px}}
+
+/* Begin tiles */
+.begin{background:var(--paper-2);border-block:1px solid var(--rule)}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:start}
+@media (max-width:900px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:540px){.tiles{grid-template-columns:1fr}}
+.tile{background:var(--paper);border:1px solid var(--rule);border-radius:4px;transition:border-color .2s,box-shadow .2s}
+.tile[data-open="true"]{border-color:var(--gold);box-shadow:var(--shadow)}
+.tile button.face{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:64px 1fr auto;align-items:center;gap:18px;width:100%;padding:22px 22px}
+.tile button.face:focus-visible{outline:2px solid var(--gold);outline-offset:-4px}
+.tile svg.icon{width:64px;height:64px;stroke:var(--gold);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.tile .tt{display:block;font-family:var(--display);font-weight:600;font-size:1.55rem;line-height:1.1}
+.tile .kicker{display:block;font-family:var(--ui);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-top:4px}
+.tile .plus{width:22px;height:22px;stroke:var(--gold);stroke-width:2;transition:transform .25s}
+.tile[data-open="true"] .plus{transform:rotate(45deg)}
+.tile .more{padding:0 22px 22px;display:grid;gap:14px;border-top:1px solid var(--rule);margin-inline:22px;padding-inline:0;padding-top:16px}
+.tile .more p{color:var(--ink-soft);font-size:1rem}
+.tile.unsure{background:transparent;border-style:dashed}
+
+/* Why / letter */
+.why-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.85fr);gap:clamp(36px,6vw,72px);align-items:start}
+@media (max-width:900px){.why-grid{grid-template-columns:1fr}}
+.letter{background:var(--field);border:1px solid var(--rule);padding:clamp(26px,5vw,56px);box-shadow:var(--shadow);position:relative}
+.letter::before{content:"";position:absolute;inset:8px;border:1px solid var(--rule);pointer-events:none}
+.letter .salute{font-family:var(--display);font-size:1.7rem;font-style:italic;margin-bottom:18px}
+.letter .body{display:grid;gap:1.05em;max-width:38rem}
+.letter .rest{display:grid;gap:1.05em}
+.letter .fade{position:relative}
+.letter.closed .rest{display:none}
+.sign{margin-top:28px;display:grid;gap:2px}
+.sign .script{font-family:var(--script);font-size:2.6rem;line-height:1;color:var(--gold-text)}
+.sign small{font-family:var(--ui);font-size:.8rem;color:var(--ink-soft);letter-spacing:.04em}
+.letter .toggle{margin-top:26px}
+.side{display:grid;gap:28px;justify-items:center}
+.family{margin:0;max-width:300px;justify-self:center;width:100%}
+.family img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover;object-position:50% 40%;border-radius:4px}
+.family figcaption{font-family:var(--ui);font-size:.8rem;color:var(--ink-soft);margin-top:10px}
+.cred{margin-top:clamp(40px,6vw,64px);border-top:2px solid var(--gold);padding-top:clamp(28px,4vw,40px);display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(24px,4vw,48px);align-items:center;font-size:.98rem;color:var(--ink-soft)}
+.cred-text{display:grid;gap:12px;max-width:44rem;justify-items:start}
+@media (max-width:600px){.cred{grid-template-columns:1fr}}
+.cred .mark{display:flex;align-items:center;gap:14px;color:var(--ink)}
+.cred .mark b{font-family:var(--ui);font-size:1.05rem;letter-spacing:.04em}
+.seal{width:52px;height:52px;border-radius:50%;border:1.5px solid var(--gold);display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:1.05rem;color:var(--gold-text);flex:none}
+.cred .fine{font-size:.8rem;line-height:1.55}
+.cfp-logo{width:clamp(150px,18vw,200px);height:auto;display:block}
+
+/* Letters */
+.letters-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px;align-items:stretch}
+@media (max-width:860px){.letters-grid{grid-template-columns:1fr}}
+.latest{border:1px solid var(--rule);padding:clamp(24px,4vw,40px);display:grid;gap:14px;align-content:start;background:var(--paper-2)}
+.latest h3{font-size:2rem}
+.latest .status{font-family:var(--ui);font-size:.8rem;font-weight:600;color:var(--ink-soft)}
+.signup{background:var(--pine);color:var(--on-pine);padding:clamp(24px,4vw,40px);display:grid;gap:14px;align-content:start}
+.signup h3{font-size:2rem;color:var(--on-pine)}
+.signup p{color:var(--on-pine-soft)}
+.signup .btn{background:var(--gold);border-color:var(--gold);justify-self:start}
+.signup .textlink{color:var(--on-pine);border-color:rgba(245,239,223,.35)}
+
+/* Archive */
+.archive{border-top:1px solid var(--rule)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.chips button{font-family:var(--ui);font-weight:600;font-size:.85rem;padding:.55em 1.1em;border-radius:999px;border:1.5px solid var(--rule);background:transparent;color:var(--ink);cursor:pointer}
+.chips button[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:#FFFCF4}
+.shelf{display:grid;gap:0;border-top:1px solid var(--rule)}
+.shelf .row{display:grid;grid-template-columns:10rem 1fr auto;gap:16px;padding:18px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.shelf .row .cat{font-family:var(--ui);font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-text)}
+.shelf .row h4{margin:0;font-family:var(--display);font-size:1.4rem;font-weight:600}
+.shelf .empty{padding:36px 0;display:grid;gap:12px;justify-items:start;color:var(--ink-soft)}
+.shelf .empty b{font-family:var(--display);font-size:1.6rem;color:var(--ink);font-weight:600}
+@media (max-width:600px){.shelf .row{grid-template-columns:1fr}}
+
+/* Forum */
+.forum{background:var(--pine);color:var(--on-pine)}
+.forum .eyebrow{color:var(--gold)}
+.forum h2{color:var(--on-pine)}
+.forum-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(32px,6vw,72px);align-items:center}
+@media (max-width:860px){.forum-grid{grid-template-columns:1fr}}
+.forum .lede{color:var(--on-pine-soft);font-size:1.15rem;max-width:36rem}
+.forum dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:14px 24px;border-left:1.5px solid var(--gold);padding-left:24px}
+.forum dt{font-family:var(--ui);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.forum dd{margin:0;font-family:var(--display);font-size:1.35rem;line-height:1.2}
+
+/* Community */
+.comm-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,72px);align-items:start}
+@media (max-width:860px){.comm-grid{grid-template-columns:1fr}}
+.questions{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid var(--rule)}
+.questions li{font-family:var(--display);font-style:italic;font-size:clamp(1.4rem,2.6vw,1.9rem);line-height:1.25;padding:18px 0;border-bottom:1px solid var(--rule)}
+.formats{display:flex;flex-wrap:wrap;gap:8px;margin-block:22px}
+.formats span{font-family:var(--ui);font-size:.8rem;font-weight:600;padding:.35em .9em;border:1px solid var(--rule);border-radius:999px;color:var(--ink-soft)}
+
+/* Contact */
+.contact{background:var(--paper-2);border-top:1px solid var(--rule)}
+.contact-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,72px);align-items:start}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr}}
+.direct{display:grid;gap:18px;margin-top:28px}
+.direct div{display:grid;gap:2px}
+.direct span{font-family:var(--ui);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-text)}
+.direct b{font-weight:400;user-select:all}
+form.card{background:var(--paper);border:1px solid var(--rule);padding:clamp(22px,4vw,40px);display:grid;gap:18px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:520px){.two{grid-template-columns:1fr}}
+.field{display:grid;gap:6px;min-width:0}
+.field label,fieldset legend{font-family:var(--ui);font-size:.82rem;font-weight:600}
+.field input,.field textarea{font:inherit;font-size:1rem;color:var(--ink);background:var(--field);border:1px solid var(--rule);border-radius:3px;padding:.7em .85em;width:100%}
+.field textarea{min-height:8.5em;resize:vertical}
+.field .hint{font-size:.85rem;font-style:italic;color:var(--ink-soft)}
+fieldset{border:0;padding:0;margin:0;display:grid;gap:10px}
+.checks{display:flex;flex-wrap:wrap;gap:8px}
+.checks label{display:flex;align-items:center;gap:8px;font-family:var(--ui);font-size:.85rem;font-weight:500;padding:.5em .9em;border:1px solid var(--rule);border-radius:999px;cursor:pointer;background:var(--field)}
+.checks input{accent-color:var(--gold)}
+.checks label:has(input:checked){border-color:var(--gold);background:color-mix(in srgb,var(--gold) 14%,var(--field))}
+.sent{border:1.5px solid var(--gold);padding:18px;display:grid;gap:10px;font-size:.95rem}
+.sent pre{white-space:pre-wrap;font-family:var(--body);font-size:.9rem;background:var(--field);padding:12px;margin:0;border:1px solid var(--rule);max-height:14em;overflow:auto}
+.sent .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+
+/* Footer */
+footer.site{background:var(--ink);color:var(--paper);padding-block:64px 28px}
+footer.site a{color:var(--paper)}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+@media (max-width:800px){.fgrid{grid-template-columns:1fr}}
+.fgrid h4{margin:0 0 14px;font-family:var(--ui);font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.fgrid ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:.95rem}
+.fbrand .tag{font-family:var(--display);font-size:1.9rem;font-weight:600;line-height:1.1;margin-block:14px 10px}
+.fbrand p{opacity:.8;font-size:.95rem;max-width:26rem}
+.fbrand .ext{margin-top:18px;font-family:var(--ui);font-size:.85rem;opacity:.85}
+.latest{grid-template-columns:132px minmax(0,1fr);gap:18px 28px;align-items:start}
+.latest>.coin{grid-row:span 2;width:132px;height:132px}
+.latest-body{display:grid;gap:12px;min-width:0}
+.latest-body h3{font-size:clamp(1.8rem,3vw,2.3rem)}
+.latest-body .excerpt{font-style:italic;color:var(--ink-soft)}
+.latest-actions{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center;margin-top:6px}
+@media (max-width:560px){.latest{grid-template-columns:1fr}.latest>.coin{grid-row:auto;width:110px;height:110px}}
+.coin .c-edge{fill:color-mix(in srgb,var(--gold) 10%,transparent);stroke:var(--gold);stroke-width:2.5}
+.coin .c-line{fill:none;stroke:var(--gold);stroke-width:1.2}
+.coin .c-text{fill:var(--gold-text);font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:2.2px}
+.coin .c-leaf{fill:none;stroke:var(--gold);stroke-width:1.2}
+.coin .c-mid{fill:var(--gold-text);font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:1px}
+.coin .c-small{font-size:15px;font-weight:600}
+.shelf .row .tl{display:grid;gap:4px;min-width:0}
+.shelf .row .tl p{color:var(--ink-soft);font-size:.98rem}
+.shelf .row h4 a{color:inherit;text-decoration:none}
+.shelf .row h4 a:hover{color:var(--gold-text)}
+
+/* Letter reader */
+.reader{position:fixed;inset:0;z-index:60;background:var(--paper);overflow-y:auto;overscroll-behavior:contain}
+.reader-bar{position:sticky;top:0;z-index:2;background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);padding-top:env(safe-area-inset-top,0px)}
+.reader-bar .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:12px}
+.reader-bar .brand img{width:44px}
+.reader-bar .brand span{font-size:1.25rem}
+.reader-doc{max-width:42rem;margin-inline:auto;padding:clamp(40px,7vw,80px) clamp(16px,4vw,24px) 96px;font-size:1.13rem;line-height:1.8}
+.reader-doc header{display:grid;gap:14px;margin-bottom:40px;padding-bottom:32px;border-bottom:1px solid var(--rule);justify-items:start}
+.reader-doc h1{font-size:clamp(2.4rem,6vw,3.8rem);line-height:1.02}
+.reader-doc .byline{font-family:var(--display);font-style:italic;font-size:1.3rem;color:var(--ink-soft)}
+.reader-doc header .coin{width:96px;height:96px}
+.reader-doc .text{display:grid;gap:1.15em}
+.reader-doc .text>p:first-child::first-letter{font-family:var(--display);font-weight:700;font-size:4.1em;float:left;line-height:.8;padding:.06em .1em 0 0;color:var(--gold-text)}
+.reader-doc .practice{margin-top:12px;background:var(--paper-2);border-left:3px solid var(--gold);padding:24px 26px;font-weight:600}
+.reader-doc .sign{margin-top:36px}
+.reader-doc .after{margin-top:56px;padding-top:28px;border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center}
+.reader-doc .disclose{margin-top:40px;font-size:.78rem;line-height:1.6;color:var(--ink-soft)}
+.legal{margin-top:48px;padding-top:24px;border-top:1px solid color-mix(in srgb,var(--paper) 20%,transparent);font-size:.78rem;line-height:1.6;opacity:.75;display:grid;gap:10px}
+</style>
+<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap hbar">
+    <a class="brand" href="#top" aria-label="FinancialPhilosopher.net home">
+      <img src="images/logo-mark.png" alt="" width="58" height="36">
+      <span>FinancialPhilosopher<small>.net</small></span>
+    </a>
+    <nav class="main" aria-label="Main">
+      <a href="#why">Why Financial Philosopher?</a>
+      <a href="#letters">The Letters</a>
+      <a href="#forum">The Forum</a>
+      <a href="#community">Your Community</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- Quotations: swap this list each season. Public-domain sources and Scripture only. -->
+  <div class="quotes" aria-roledescription="carousel" aria-label="Quotations for Fall 2026">
+    <div class="wrap qwrap">
+      <div class="qlabel">Fall 2026</div>
+      <div class="qstage" id="qstage" aria-live="polite"></div>
+      <div class="qnav">
+        <button type="button" id="qprev" aria-label="Previous quotation"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <div class="dots" id="qdots"></div>
+        <button type="button" id="qnext" aria-label="Next quotation"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-top">
+        <p class="eyebrow">Welcome</p>
+        <h1>Wise Decisions. <em>Enduring Values.</em></h1>
+        <div class="intro">
+          <p>I'm Austin Mall, CERTIFIED FINANCIAL PLANNER®, educator, former seminarian, husband, and father; and I'm glad you're here.</p>
+          <p>While money is an important tool, FinancialPhilosopher.net exists to help us think more deeply about how we use it.</p>
+        </div>
+      </div>
+      <div class="hero-mission">
+        <p class="mission">My mission: helping ensure that your financial life remains at the service of your deeper callings.</p>
+        <div class="ctas">
+          <a class="btn" href="#begin">Where would you like to begin?</a>
+          <a class="btn ghost" href="#why">Meet Austin</a>
+        </div>
+      </div>
+      <figure class="arch">
+        <img src="images/austin-mall.jpg" alt="Austin Mall smiling outdoors in a checked button-down shirt">
+        <figcaption>Austin Mall, CFP®</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="begin" id="begin">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Where would you like to begin?</h2>
+        <p class="lede">Money can be approached from many angles. Which of these topics interests you most right now?</p>
+      </div>
+      <div class="tiles" id="tiles">
+        <div class="tile" data-open="false">
+          <button class="face" type="button" aria-expanded="false" aria-controls="t1">
+            <svg class="icon" viewBox="0 0 64 64" aria-hidden="true"><rect x="7" y="10" width="50" height="34" rx="2"/><path d="M26 54h12M32 44v10M7 20h50M23 20v24M40 20v24M7 29h50M7 37h50"/></svg>
+            <span><span class="tt">Practical</span><span class="kicker">Scientific</span></span>
+            <svg class="plus" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+          <div class="more" id="t1" hidden><p>How do I make better financial decisions about saving, investing, taxes, retirement?</p><a class="textlink" href="#archive" data-cat="practical">Explore Practical Insights →</a></div>
+        </div>
+        <div class="tile" data-open="false">
+          <button class="face" type="button" aria-expanded="false" aria-controls="t2">
+            <svg class="icon" viewBox="0 0 64 64" aria-hidden="true"><path d="M24 56v-9c-8-4-11-11-10-19 1-11 10-19 21-19 10 0 18 7 18 17l4 8-4 2v6c0 3-2 4-5 4h-4v10"/><circle cx="32" cy="27" r="5"/><circle cx="32" cy="27" r="8.5" stroke-width="3.2" stroke-dasharray="2.6 2.75" stroke-linecap="butt"/><circle cx="43" cy="35" r="3"/></svg>
+            <span><span class="tt">Behavioral</span><span class="kicker">&amp; Psychological</span></span>
+            <svg class="plus" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+          <div class="more" id="t2" hidden><p>Why do smart people make poor financial decisions? How do habits, emotions, incentives, and biases influence our relationship with money?</p><a class="textlink" href="#archive" data-cat="behavioral">Explore Behavioral Insights →</a></div>
+        </div>
+        <div class="tile" data-open="false">
+          <button class="face" type="button" aria-expanded="false" aria-controls="t3">
+            <svg class="icon" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6v46M20 19h24"/><path d="M14 56c6-4 30-4 36 0"/></svg>
+            <span><span class="tt">Theological</span><span class="kicker">Faith &amp; tradition</span></span>
+            <svg class="plus" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+          <div class="more" id="t3" hidden><p>What do faith and tradition teach us about wealth, work, giving, and the purpose of money?</p><a class="textlink" href="#archive" data-cat="theological">Explore Theological Insights →</a></div>
+        </div>
+        <div class="tile" data-open="false">
+          <button class="face" type="button" aria-expanded="false" aria-controls="t4">
+            <svg class="icon" viewBox="0 0 64 64" aria-hidden="true"><circle cx="20" cy="17" r="6"/><circle cx="42" cy="17" r="6"/><path d="M9 52V36c0-7 5-11 11-11s11 4 11 11v16M31 36c0-7 5-11 11-11s11 4 11 11v16"/><circle cx="25" cy="38" r="3.5"/><path d="M19 56v-4c0-4 3-6 6-6s6 2 6 6v4"/><circle cx="45" cy="41" r="2.8"/><path d="M40 56v-3c0-3 2-5 5-5s5 2 5 5v3"/></svg>
+            <span><span class="tt">Familial</span><span class="kicker">&amp; Relational</span></span>
+            <svg class="plus" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+          <div class="more" id="t4" hidden><p>How can families discuss money well, prepare children for responsibility, navigate inheritance, and build lasting legacies?</p><a class="textlink" href="#archive" data-cat="familial">Explore Family &amp; Relational Insights →</a></div>
+        </div>
+        <div class="tile" data-open="false">
+          <button class="face" type="button" aria-expanded="false" aria-controls="t5">
+            <svg class="icon" viewBox="0 0 64 64" aria-hidden="true"><path d="M8 16l16-6 16 6 16-6v38l-16 6-16-6-16 6z"/><path d="M24 10v38M40 16v38"/><path d="M13 40c4-6 8-2 12-8s9-4 12-10 8-4 11-6" stroke-dasharray="2 4"/></svg>
+            <span><span class="tt">Historical</span><span class="kicker">Wealth &amp; civilization</span></span>
+            <svg class="plus" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+          <div class="more" id="t5" hidden><p>What can history teach us about wealth, prosperity, human flourishing, and the decisions that shape civilizations?</p><a class="textlink" href="#archive" data-cat="historical">Explore Historical Insights →</a></div>
+        </div>
+        <div class="tile unsure" data-open="false">
+          <button class="face" type="button" aria-expanded="false" aria-controls="t6">
+            <svg class="icon" viewBox="0 0 64 64" aria-hidden="true"><path d="M23 22c0-7 5-11 10-11s10 4 10 10c0 8-11 9-11 18"/><circle cx="32" cy="50" r="1.6" fill="currentColor"/></svg>
+            <span><span class="tt">Not sure?</span><span class="kicker">Start anywhere</span></span>
+            <svg class="plus" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+          <div class="more" id="t6" hidden><p>Not sure where to start? Browse everything that has been written so far.</p><a class="textlink" href="#archive" data-cat="all">Explore the archives of The Letters →</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Founder &amp; CFP® Professional</p>
+        <h2>Meet Austin Mall, Financial Philosopher</h2>
+      </div>
+      <div class="why-grid">
+        <article class="letter closed" id="letter">
+          <p class="salute">Dear Reader,</p>
+          <div class="body">
+            <p>I'm Austin Mall, educator, former seminarian, husband, and father.</p>
+            <p>During work hours, I help families navigate complex financial decisions. Here, I have the opportunity to reflect more deeply on the ideas that surround money, happiness, purpose, and the values we cherish most.</p>
+            <p>I want more people to be wise with their money, time, and talents so they can devote more of themselves to what is truly worth caring about. That's easier said than done. Money can open doors, solve problems, and create opportunities. It can also distract us from the very things we hope it will help us achieve.</p>
+            <p>That's why I created FinancialPhilosopher.net.</p>
+            <div class="rest" id="letter-rest">
+              <p>Many people are skeptical of financial professionals, and often for good reason. Some have been disappointed. Others simply don't know whom to trust. My hope is that this site can serve as a different kind of resource, one focused on thoughtful reflection, practical wisdom, and honest conversations about money and life. Together, these topics help us explore how money works and what money is for.</p>
+              <p>I built this site because I believe the philosophy behind my planning practice can help individuals, families, and organizations discover what real wealth actually requires. This community is about ensuring that our financial lives remain at the service of our deeper callings.</p>
+              <p>Look around. Despite unprecedented material abundance, many people remain restless, anxious, and dissatisfied. It is tempting to believe that the next purchase, achievement, or financial milestone will finally be enough. Yet most of us eventually discover that money is a valuable tool, but an undeserving master.</p>
+              <p>My hope is that FinancialPhilosopher.net becomes a place of genuine encouragement, reflection, and growth. A place worth revisiting. A place worth sharing with family and friends.</p>
+              <p>Welcome, and thank you for being here.</p>
+              <div class="sign"><span class="script">Austin Mall</span><small>Austin Mall, CFP®</small></div>
+            </div>
+          </div>
+          <button class="btn ghost toggle" type="button" id="letter-toggle" aria-expanded="false" aria-controls="letter-rest">Continue reading the letter</button>
+        </article>
+        <aside class="side">
+          <figure class="family">
+            <img src="images/mall-family.jpg" alt="Austin Mall with his wife and two young children in front of autumn maples" loading="lazy">
+            <figcaption>The Mall family</figcaption>
+          </figure>
+        </aside>
+      </div>
+      <div class="cred">
+        <img class="cfp-logo" src="images/cfp-logo.png" alt="CFP® CERTIFIED FINANCIAL PLANNER® certification mark" width="200">
+        <div class="cred-text">
+          <p>The CERTIFIED FINANCIAL PLANNER® designation is one of the most prestigious in the field, requiring a broad knowledge of various disciplines within financial planning (investments, tax, estate, insurance, et al.) and holding practitioners to a standard of excellence when providing financial advice.</p>
+            <p class="fine">Certified Financial Planner Board of Standards, Inc. (CFP Board) owns the CFP® certification mark, the CERTIFIED FINANCIAL PLANNER® certification mark, and the CFP® certification mark (with plaque design) logo in the United States, which it authorizes use of by individuals who successfully complete CFP Board's initial and ongoing certification requirements.</p>
+            <a class="textlink" href="https://www.cfp.net/why-cfp-professionals/what-is-a-cfp-professional" target="_blank" rel="noopener">What is CFP® Certification? →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="letters" class="begin">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">The Letters</p>
+        <h2>The love of wisdom deserves more than click-bait.</h2>
+        <p class="lede">These Letters explore how money can remain at the service of our deeper callings. Drawing from financial planning, history, theology, family life, and personal experience, each reflection seeks to help readers make wiser decisions and cultivate enduring values.</p>
+      </div>
+      <div class="letters-grid">
+        <div class="latest">
+          <svg class="coin" viewBox="0 0 200 200" role="img" aria-label="Line drawing of a Roman coin inscribed TI CAESAR DIVI AVG F AVGVSTVS">
+  <defs><path id="coin-ring" d="M100 100 m-74 0 a74 74 0 1 1 148 0 a74 74 0 1 1 -148 0"/></defs>
+  <circle cx="100" cy="100" r="94" class="c-edge"/>
+  <circle cx="100" cy="100" r="88" class="c-line" stroke-dasharray="1.5 4"/>
+  <circle cx="100" cy="100" r="62" class="c-line"/>
+  <text class="c-text"><textPath href="#coin-ring" startOffset="2%">TI · CAESAR · DIVI · AVG · F · AVGVSTVS ·</textPath></text>
+  <g class="c-leaf"><ellipse cx="107.6" cy="143.3" rx="3.2" ry="7.5" transform="rotate(108 107.6 143.3)"/><ellipse cx="97.7" cy="143.9" rx="3.2" ry="7.5" transform="rotate(121 97.7 143.9)"/><ellipse cx="87.9" cy="142.3" rx="3.2" ry="7.5" transform="rotate(134 87.9 142.3)"/><ellipse cx="78.7" cy="138.5" rx="3.2" ry="7.5" transform="rotate(147 78.7 138.5)"/><ellipse cx="70.6" cy="132.7" rx="3.2" ry="7.5" transform="rotate(160 70.6 132.7)"/><ellipse cx="64.0" cy="125.2" rx="3.2" ry="7.5" transform="rotate(173 64.0 125.2)"/><ellipse cx="59.2" cy="116.5" rx="3.2" ry="7.5" transform="rotate(186 59.2 116.5)"/><ellipse cx="56.5" cy="106.9" rx="3.2" ry="7.5" transform="rotate(199 56.5 106.9)"/><ellipse cx="56.1" cy="96.9" rx="3.2" ry="7.5" transform="rotate(212 56.1 96.9)"/><ellipse cx="92.4" cy="143.3" rx="3.2" ry="7.5" transform="rotate(72 92.4 143.3)"/><ellipse cx="102.3" cy="143.9" rx="3.2" ry="7.5" transform="rotate(59 102.3 143.9)"/><ellipse cx="112.1" cy="142.3" rx="3.2" ry="7.5" transform="rotate(46 112.1 142.3)"/><ellipse cx="121.3" cy="138.5" rx="3.2" ry="7.5" transform="rotate(33 121.3 138.5)"/><ellipse cx="129.4" cy="132.7" rx="3.2" ry="7.5" transform="rotate(20 129.4 132.7)"/><ellipse cx="136.0" cy="125.2" rx="3.2" ry="7.5" transform="rotate(7 136.0 125.2)"/><ellipse cx="140.8" cy="116.5" rx="3.2" ry="7.5" transform="rotate(-6 140.8 116.5)"/><ellipse cx="143.5" cy="106.9" rx="3.2" ry="7.5" transform="rotate(-19 143.5 106.9)"/><ellipse cx="143.9" cy="96.9" rx="3.2" ry="7.5" transform="rotate(-32 143.9 96.9)"/></g>
+  <text x="100" y="98" text-anchor="middle" class="c-mid">Mt 22</text>
+  <text x="100" y="120" text-anchor="middle" class="c-mid c-small">15–22</text>
+</svg>
+          <div class="latest-body">
+            <p class="eyebrow">Most recent Letter · October 2026</p>
+            <h3><a href="#give-caesar-his-due" style="color:inherit;text-decoration:none">Give Caesar His Due, and Not a Moment More</a></h3>
+            <p class="status">Theological · By Austin Mall, CFP®</p>
+            <p class="excerpt">A couple weeks ago, we were preparing to go to a birthday party for my son's friend. Half an hour before we were set to leave, my son asked me, with a worried look, "Dad, I don't know what to give my friend for his birthday."</p>
+            <div class="latest-actions">
+              <a class="btn" href="#give-caesar-his-due">Read the full Letter</a>
+              <a class="textlink" href="#archive" data-cat="all">See all Letters (The Archives) →</a>
+            </div>
+          </div>
+        </div>
+        <div class="signup">
+          <h3>Enjoy more Letters</h3>
+          <p>Occasional reflections on money, family, faith, and the decisions that shape a life well-lived. No click-bait, and no sales pitch.</p>
+          <a class="btn" href="#contact" data-topic="letters">Sign up for the Letters</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="archive" class="archive">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">The Archives</p>
+        <h2>All Letters, by topic</h2>
+      </div>
+      <div class="chips" id="chips" role="group" aria-label="Filter Letters by topic">
+        <button type="button" data-cat="all" aria-pressed="true">All</button>
+        <button type="button" data-cat="practical" aria-pressed="false">Practical</button>
+        <button type="button" data-cat="behavioral" aria-pressed="false">Behavioral &amp; Psychological</button>
+        <button type="button" data-cat="theological" aria-pressed="false">Theological</button>
+        <button type="button" data-cat="familial" aria-pressed="false">Familial &amp; Relational</button>
+        <button type="button" data-cat="historical" aria-pressed="false">Historical</button>
+      </div>
+      <div class="shelf" id="shelf"></div>
+    </div>
+  </section>
+
+  <section id="forum" class="forum">
+    <div class="wrap forum-grid">
+      <div class="sec-head" style="margin-bottom:0">
+        <p class="eyebrow">Webinar</p>
+        <h2>The Forum</h2>
+        <p class="lede">The Forum is a monthly gathering where we can discuss money, family, faith, and the decisions that shape a life well-lived. Together, we'll explore practical financial topics through the lens of wisdom, stewardship, and enduring values.</p>
+        <div><a class="btn" href="#contact" data-topic="forum">Sign up for an invitation</a></div>
+      </div>
+      <dl>
+        <dt>When</dt><dd>Monthly</dd>
+        <dt>Where</dt><dd>Online, from wherever you are</dd>
+        <dt>Topics</dt><dd>Money, family, faith, and stewardship</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="community">
+    <div class="wrap comm-grid">
+      <div>
+        <div class="sec-head" style="margin-bottom:0">
+          <p class="eyebrow">Engage Your Family &amp; Community</p>
+          <h2>Bring these Ideas to Your Community</h2>
+          <p class="lede">Every meaningful conversation begins with a good question. I would be honored to explore these questions with your community through a gathering, presentation, workshop, or other form of in-person discussion.</p>
+        </div>
+        <div class="formats"><span>Gathering</span><span>Presentation</span><span>Workshop</span><span>In-person discussion</span></div>
+        <a class="btn" href="#contact" data-topic="community">Inquire about bringing Financial Philosopher to your community</a>
+      </div>
+      <ul class="questions" aria-label="Questions to explore">
+        <li>What is wealth for?</li>
+        <li>How do we prepare children for responsibility?</li>
+        <li>What makes a lasting legacy?</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <div class="sec-head" style="margin-bottom:0">
+          <p class="eyebrow">Get in touch</p>
+          <h2>Write to Austin</h2>
+          <p class="lede">Ask to receive the Letters, request an invitation to The Forum, or invite Austin to your next family or community gathering.</p>
+        </div>
+        <div class="direct">
+          <div><span>Office</span><b>(850) 562-7526</b></div>
+          <div><span>Email</span><b>Austin.Mall@LPL.com</b></div>
+          <div><span>Address</span><b>1331 E Lafayette St, Suite B<br>Tallahassee, FL 32301</b></div>
+        </div>
+      </div>
+      <form class="card" id="cform" novalidate>
+        <div class="two">
+          <div class="field"><label for="fn">First name</label><input id="fn" name="first" autocomplete="given-name" required></div>
+          <div class="field"><label for="ln">Last name</label><input id="ln" name="last" autocomplete="family-name" required></div>
+        </div>
+        <div class="two">
+          <div class="field"><label for="em">Email</label><input id="em" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="ph">Phone</label><input id="ph" name="phone" type="tel" autocomplete="tel"></div>
+        </div>
+        <fieldset>
+          <legend>I'd like to…</legend>
+          <div class="checks">
+            <label><input type="checkbox" id="c-letters" value="Receive the Letters"> Receive the Letters</label>
+            <label><input type="checkbox" id="c-forum" value="Get invitations to The Forum"> Get invitations to The Forum</label>
+            <label><input type="checkbox" id="c-community" value="Invite Austin to a gathering"> Invite Austin to a gathering</label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <label for="msg">What would you like to talk about, or which resource would you like to receive?</label>
+          <span class="hint" id="msg-hint">A little about why you're reaching out. Do you want to receive Letters? Get invitations to The Forum? Or invite Austin to your next family or community gathering?</span>
+          <textarea id="msg" name="message" aria-describedby="msg-hint"></textarea>
+        </div>
+        <p id="ferr" role="alert" style="color:var(--gold-text);font-family:var(--ui);font-size:.85rem" hidden></p>
+        <div><button class="btn" type="submit">Send to Austin</button></div>
+        <div class="sent" id="sent" hidden>
+          <b>Your note is ready.</b>
+          <span>This preview isn't connected to an inbox yet. Copy your note and email it to <b style="user-select:all">Austin.Mall@LPL.com</b>.</span>
+          <pre id="sent-text"></pre>
+          <div class="row"><button class="btn" type="button" id="copy">Copy note</button><a class="textlink" id="mailto" href="#">Open in my email app</a></div>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<div class="reader" id="give-caesar-his-due" role="dialog" aria-modal="true" aria-labelledby="caesar-title" hidden>
+  <div class="reader-bar">
+    <div class="wrap">
+      <a class="brand" href="#letters" aria-label="Back to FinancialPhilosopher.net"><img src="images/logo-mark.png" alt="" width="44" height="27"><span>FinancialPhilosopher<small>.net</small></span></a>
+      <a class="btn ghost" href="#letters">← Back to The Letters</a>
+    </div>
+  </div>
+  <article class="reader-doc">
+    <header>
+      <svg class="coin" aria-hidden="true" viewBox="0 0 200 200" aria-label="Line drawing of a Roman coin inscribed TI CAESAR DIVI AVG F AVGVSTVS">
+  <defs><path id="coin-ring-2" d="M100 100 m-74 0 a74 74 0 1 1 148 0 a74 74 0 1 1 -148 0"/></defs>
+  <circle cx="100" cy="100" r="94" class="c-edge"/>
+  <circle cx="100" cy="100" r="88" class="c-line" stroke-dasharray="1.5 4"/>
+  <circle cx="100" cy="100" r="62" class="c-line"/>
+  <text class="c-text"><textPath href="#coin-ring-2" startOffset="2%">TI · CAESAR · DIVI · AVG · F · AVGVSTVS ·</textPath></text>
+  <g class="c-leaf"><ellipse cx="107.6" cy="143.3" rx="3.2" ry="7.5" transform="rotate(108 107.6 143.3)"/><ellipse cx="97.7" cy="143.9" rx="3.2" ry="7.5" transform="rotate(121 97.7 143.9)"/><ellipse cx="87.9" cy="142.3" rx="3.2" ry="7.5" transform="rotate(134 87.9 142.3)"/><ellipse cx="78.7" cy="138.5" rx="3.2" ry="7.5" transform="rotate(147 78.7 138.5)"/><ellipse cx="70.6" cy="132.7" rx="3.2" ry="7.5" transform="rotate(160 70.6 132.7)"/><ellipse cx="64.0" cy="125.2" rx="3.2" ry="7.5" transform="rotate(173 64.0 125.2)"/><ellipse cx="59.2" cy="116.5" rx="3.2" ry="7.5" transform="rotate(186 59.2 116.5)"/><ellipse cx="56.5" cy="106.9" rx="3.2" ry="7.5" transform="rotate(199 56.5 106.9)"/><ellipse cx="56.1" cy="96.9" rx="3.2" ry="7.5" transform="rotate(212 56.1 96.9)"/><ellipse cx="92.4" cy="143.3" rx="3.2" ry="7.5" transform="rotate(72 92.4 143.3)"/><ellipse cx="102.3" cy="143.9" rx="3.2" ry="7.5" transform="rotate(59 102.3 143.9)"/><ellipse cx="112.1" cy="142.3" rx="3.2" ry="7.5" transform="rotate(46 112.1 142.3)"/><ellipse cx="121.3" cy="138.5" rx="3.2" ry="7.5" transform="rotate(33 121.3 138.5)"/><ellipse cx="129.4" cy="132.7" rx="3.2" ry="7.5" transform="rotate(20 129.4 132.7)"/><ellipse cx="136.0" cy="125.2" rx="3.2" ry="7.5" transform="rotate(7 136.0 125.2)"/><ellipse cx="140.8" cy="116.5" rx="3.2" ry="7.5" transform="rotate(-6 140.8 116.5)"/><ellipse cx="143.5" cy="106.9" rx="3.2" ry="7.5" transform="rotate(-19 143.5 106.9)"/><ellipse cx="143.9" cy="96.9" rx="3.2" ry="7.5" transform="rotate(-32 143.9 96.9)"/></g>
+  <text x="100" y="98" text-anchor="middle" class="c-mid">Mt 22</text>
+  <text x="100" y="120" text-anchor="middle" class="c-mid c-small">15–22</text>
+</svg>
+      <p class="eyebrow">The Letters · Theological · October 2026</p>
+      <h1 id="caesar-title">Give Caesar His Due, and Not a Moment More</h1>
+      <p class="byline">By Austin Mall, CFP® Professional at FinancialPhilosopher.net</p>
+    </header>
+    <div class="text">
+      <p>A couple weeks ago, we were preparing to go to a birthday party for my son's friend. Keep in mind that my son is five years old. Half an hour before we were set to leave, my son asked me, with a worried look, "Dad, I don't know what to give my friend for his birthday." Not having enough time to run to the store, I advised him to look around and see if he could make something or consider giving one of his own toys (a typical Dad response; Mom would have been more helpful). Like any five-year-old, he began deliberating which of his toys he could part with and which ones he wanted to keep for himself.</p>
+      <p>We can all relate. We all have gifts (the Church often calls them time, talent, and treasure), and we must decide how willing or unwilling we are to part with them. The Bible provides a practical method for prioritizing our gifts. The Pharisees and Herodians try to set a trap for Jesus by asking him if it is lawful to pay taxes to the Emperor (Mt 22:15-22 NABRE). By "lawful," they mean according to God's law. Jesus, knowing their deception, said, "Show me the coin that pays the census tax." Then they handed him the Roman coin. He asked them, "Whose image is this and whose inscription?" They replied, "Caesar's." At that he [Jesus] said to them, "Then repay to Caesar what belongs to Caesar and to God what belongs to God."</p>
+      <p>Understanding Jesus's wise response – relating it to our everyday tasks and more significant life projects – can help us make room for doing more of the things that matter most.</p>
+      <p>Jesus uses money, a worldly tool familiar to everyone, to showcase our true identity. Jesus points out that the coin belongs to Caesar because it bears his image. Correspondingly, whatever bears God's image belongs to God. The question Jesus doesn't immediately answer – but leaves open for the audience to consider – is: What, then, is that object that bears God's image? For the Jewish audience of Jesus's time and for us today, Sacred Scripture teaches that God's image is written on humanity. This is also known as the <em>Imago Dei</em>: Man and woman are made in the image and likeness of God. Here's how I hear Jesus's reply: <em>Why are you asking me about taxes? Pay them. This money is not really yours because you will not keep it forever. Care more about the one whose image is written on your innermost being, namely God, and give to Him all those things that belong to Him, namely your entire being because this is what you will keep for all eternity.</em> That's quite an invitation and one we may want to jump ahead to, but let's not overlook the importance of what Jesus said first about paying taxes.</p>
+      <p>In life, especially finances, there are things you must do, and typically, the better you are at mundane things the more capacity you have for taking on the more important, often complex, life projects. For families, there are boxes that, though not exciting, if left unchecked can lead to unnecessary risks and missing out on long-term goals entirely. Financially, these tasks include managing cash flow, applying for relevant insurance policies, getting a will and other estate planning documents in order, saving for retirement, and so on. All these items, like paying taxes, aren't necessarily bad things; in fact, getting them completed frees you to look beyond this week's tasks. Or better, you can automate those tasks. Some examples include setting up recurring contributions to savings accounts and calendar reminders to review your cash flow, estate planning documents, and insurance policies.</p>
+      <p>What can you focus on when you're not drowning in busy work? Here are some concrete examples of projects that my wife and I are working on, which I believe fit the category of "giving God what belongs to God": raising our children well, giving back to our Church and community, incorporating the liturgical calendar into our daily living, spending time with other families, and working hard in our vocations.</p>
+      <p>I want to finish the birthday story. My son decided to give his friend one of his most cherished dump trucks, and instead of feeling the loss, he was thrilled to see his friend smile at receiving the gift. Adults, including myself, can learn from this. He gave his best to someone who bears God's image, and that's exactly where our best belongs.</p>
+      <p class="practice">In my annual calendar, I have a list of life projects that mean the most to me (for example: my faith, wife, children, work, health, and leisure). Next to each project, I have a vision and several recurring tasks. Next to "Faith," I have written "to become a saint" (the vision), followed by "regular confession and prayer" (the tasks). I'd encourage you to do the same with your most important life projects. If there are goals you can't imagine seeing, congratulations, you've made a good list.</p>
+    </div>
+    <div class="sign"><span class="script">Austin Mall</span><small>Austin Mall, CFP®</small></div>
+    <div class="after">
+      <a class="btn" href="#contact" data-topic="letters">Sign up to enjoy more Letters</a>
+      <a class="textlink" href="#archive" data-cat="all">See all Letters (The Archives) →</a>
+    </div>
+    <p class="disclose">CFP®, CERTIFIED FINANCIAL PLANNER®, and the CFP® logo are certification marks owned by the Certified Financial Planner Board of Standards, Inc., and are awarded to individuals who successfully complete CFP Board's initial and ongoing certification requirements. Financial planning, investment management strategies, and securities offered through Austin M. Mall, CFP®, and LPL Financial. Member FINRA/SIPC. Non-deposit investment products are not FDIC insured, are not bank deposits, and may lose value.</p>
+  </article>
+</div>
+
+
+<footer class="site">
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fbrand">
+        <a class="brand" href="#top" style="color:var(--gold)"><img src="images/logo-mark.png" alt="" width="52" height="32"><span style="color:var(--gold)">FinancialPhilosopher<small>.net</small></span></a>
+        <p class="tag">Wise Decisions. Enduring Values.</p>
+        <p>Helping ensure that your financial life remains at the service of your deeper callings.</p>
+        <p class="ext">FinancialPhilosopher.net is an extension of Mall Family Wealth LLC · <a href="https://MallFamilyWealth.com" target="_blank" rel="noopener">MallFamilyWealth.com</a></p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Office (850) 562-7526</li>
+          <li>Austin.Mall@LPL.com</li>
+          <li>1331 E Lafayette St, Suite B<br>Tallahassee, FL 32301</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal &amp; Connect</h4>
+        <ul>
+          <li><a href="#contact">Contact Austin</a></li>
+          <li><a href="#legal">Legal Information</a></li>
+          <li><a href="https://brokercheck.finra.org/" target="_blank" rel="noopener">FINRA BrokerCheck</a></li>
+          <li><a href="https://www.lpl.com/content/dam/lpl-www/documents/disclosures/lpl-financial-relationship-summary.pdf" target="_blank" rel="noopener">LPL Financial Form CRS</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal" id="legal">
+      <p>CFP®, CERTIFIED FINANCIAL PLANNER®, and the CFP® logo are certification marks owned by the Certified Financial Planner Board of Standards, Inc., and are awarded to individuals who successfully complete CFP Board's initial and ongoing certification requirements. Financial planning, investment management strategies, and securities offered through Austin M. Mall, CFP®, and LPL Financial. Member FINRA/SIPC. Non-deposit investment products are not FDIC insured, are not bank deposits, and may lose value.</p>
+      <p>© 2026 Austin M. Mall, CFP®. All rights reserved. FinancialPhilosopher.net</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ---------- Seasonal quotations (Fall 2026). Public domain & Scripture only. ---------- */
+const QUOTES = [
+  ["The person who is trustworthy in very small matters is also trustworthy in great ones; and the person who is dishonest in very small matters is also dishonest in great ones.","Luke 16:10"],
+  ["What we obtain too cheaply, we esteem too lightly.","Thomas Paine"],
+  ["Repay to Caesar what belongs to Caesar and to God what belongs to God.","Matthew 22:21"],
+  ["The family is the test of freedom; because the family is the only thing that the free man makes for himself and by himself.","G.K. Chesterton"],
+  ["The good leave an inheritance to their children's children, but the wealth of the sinner is stored up for the just.","Proverbs 13:22"]
+];
+const stage=document.getElementById('qstage'), dots=document.getElementById('qdots');
+let qi=0, timer=null;
+QUOTES.forEach(([q,a],i)=>{
+  const f=document.createElement('figure'); f.innerHTML=`<blockquote>“${q}”</blockquote><figcaption>— ${a}</figcaption>`;
+  if(i===0) f.classList.add('on'); f.setAttribute('aria-hidden', i!==0); stage.appendChild(f);
+  const d=document.createElement('button'); d.type='button'; d.setAttribute('aria-label',`Quotation ${i+1}: ${a}`); d.setAttribute('aria-current',i===0);
+  d.onclick=()=>{show(i);restart()}; dots.appendChild(d);
+});
+function show(n){
+  qi=(n+QUOTES.length)%QUOTES.length;
+  [...stage.children].forEach((f,i)=>{f.classList.toggle('on',i===qi);f.setAttribute('aria-hidden',i!==qi)});
+  [...dots.children].forEach((d,i)=>d.setAttribute('aria-current',i===qi));
+}
+const calm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function restart(){clearInterval(timer); if(!calm) timer=setInterval(()=>show(qi+1),9000)}
+document.getElementById('qprev').onclick=()=>{show(qi-1);restart()};
+document.getElementById('qnext').onclick=()=>{show(qi+1);restart()};
+stage.addEventListener('mouseenter',()=>clearInterval(timer)); stage.addEventListener('mouseleave',restart);
+restart();
+
+/* ---------- Topic tiles ---------- */
+document.querySelectorAll('.tile .face').forEach(b=>b.addEventListener('click',()=>{
+  const tile=b.closest('.tile'), open=tile.dataset.open!=='true';
+  tile.dataset.open=open; b.setAttribute('aria-expanded',open);
+  document.getElementById(b.getAttribute('aria-controls')).hidden=!open;
+}));
+
+/* ---------- Intro letter ---------- */
+const letter=document.getElementById('letter'), lt=document.getElementById('letter-toggle');
+lt.onclick=()=>{
+  const open=letter.classList.toggle('closed')===false;
+  lt.setAttribute('aria-expanded',open); lt.textContent=open?'Show less':'Continue reading the letter';
+  if(!open) letter.scrollIntoView({block:'start'});
+};
+
+/* ---------- The Archives. Add each Letter here: {title, cat, date, url, intro} ---------- */
+const LETTERS = [
+  {title:"Give Caesar His Due, and Not a Moment More", cat:"theological", date:"October 2026", url:"#give-caesar-his-due",
+   intro:"What a five-year-old's birthday gift and a Roman coin can teach us about handling life's must-dos so we can give our best to what matters most."}
+];
+const CAT_NAMES={practical:'Practical',behavioral:'Behavioral & Psychological',theological:'Theological',familial:'Familial & Relational',historical:'Historical'};
+const shelf=document.getElementById('shelf'), chips=document.getElementById('chips');
+function renderShelf(cat){
+  [...chips.children].forEach(c=>c.setAttribute('aria-pressed',c.dataset.cat===cat));
+  const list=LETTERS.filter(l=>cat==='all'||l.cat===cat);
+  if(!list.length){
+    shelf.innerHTML=`<div class="empty"><b>No ${CAT_NAMES[cat]} Letters yet.</b><span>New Letters are filed here by topic as they're published.</span><a class="btn" href="#contact" data-topic="letters">Sign up to enjoy more Letters</a></div>`;
+  } else {
+    shelf.innerHTML=list.map(l=>`<div class="row"><span class="cat">${CAT_NAMES[l.cat]}</span><div class="tl"><h4><a href="${l.url}">${l.title}</a></h4><p>${l.intro||''}</p></div><span class="cat" style="color:var(--ink-soft)">${l.date||''}</span></div>`).join('');
+  }
+}
+chips.addEventListener('click',e=>{const b=e.target.closest('button'); if(b) renderShelf(b.dataset.cat)});
+renderShelf('all');
+
+/* ---------- Letter reader: opens when the address ends in a Letter's #anchor ---------- */
+const readers=[...document.querySelectorAll('.reader')];
+let lastOpen=null;
+function syncReader(){
+  const id=location.hash.slice(1);
+  const open=readers.find(r=>r.id===id);
+  readers.forEach(r=>{r.hidden=r!==open});
+  document.documentElement.style.overflow=open?'hidden':'';
+  if(open&&open!==lastOpen){open.scrollTop=0;open.querySelector('h1').setAttribute('tabindex','-1');open.querySelector('h1').focus({preventScroll:true})}
+  lastOpen=open||null;
+}
+addEventListener('hashchange',syncReader);
+addEventListener('keydown',e=>{if(e.key==='Escape'&&lastOpen) location.hash='letters'});
+syncReader();
+document.addEventListener('click',e=>{
+  const a=e.target.closest('a[data-cat]'); if(a) renderShelf(a.dataset.cat);
+  const t=e.target.closest('a[data-topic]'); if(t){const box=document.getElementById('c-'+t.dataset.topic); if(box) box.checked=true;}
+});
+
+/* ---------- Contact form ---------- */
+const form=document.getElementById('cform'), err=document.getElementById('ferr');
+form.addEventListener('submit',e=>{
+  e.preventDefault();
+  const v=id=>document.getElementById(id).value.trim();
+  if(!v('fn')||!v('ln')||!/^\S+@\S+\.\S+$/.test(v('em'))){err.textContent='Please add your first name, last name, and a valid email address.';err.hidden=false;return}
+  err.hidden=true;
+  const wants=[...form.querySelectorAll('.checks input:checked')].map(c=>c.value);
+  const text=`Name: ${v('fn')} ${v('ln')}\nEmail: ${v('em')}${v('ph')?`\nPhone: ${v('ph')}`:''}${wants.length?`\nInterested in: ${wants.join('; ')}`:''}\n\n${v('msg')}`;
+  document.getElementById('sent-text').textContent=text;
+  document.getElementById('mailto').href='mailto:Austin.Mall@LPL.com?subject='+encodeURIComponent('FinancialPhilosopher.net inquiry')+'&body='+encodeURIComponent(text);
+  document.getElementById('sent').hidden=false;
+});
+document.getElementById('copy').onclick=async function(){
+  const t=document.getElementById('sent-text').textContent;
+  try{await navigator.clipboard.writeText(t);this.textContent='Copied'}catch(_){const r=document.createRange();r.selectNodeContents(document.getElementById('sent-text'));const s=getSelection();s.removeAllRanges();s.addRange(r);this.textContent='Selected. Press Ctrl+C / ⌘C'}
+};
+</script>
+</body>
+</html>
